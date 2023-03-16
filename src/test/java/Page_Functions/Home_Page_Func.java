@@ -15,19 +15,30 @@ public class Home_Page_Func extends CoreActions {
     }
     public static void closePopUp() {
     	
-    	waittillurlis();
+    	
     	sleep(3);
+    	waitForDashboardUrl();
 //    	driver.getCurrentUrl().equals("https://www.tst.brightmls.com/dashboard");
-    	System.out.println("dashboard opened");
-    	sleep(3);
+    	System.out.println("dashboard opened");	
+    	sleep(8);
     	System.out.println("waiting for pop-up");
+    	waitForVisibility(Home_Page.pop_up);
     	verifyAvailable(Home_Page.pop_up);
     	click(Home_Page.close_btn);
- 
+    	sleep(2);
+    	sleep(2);
     	
     }
-//    public void verifydashboardurl() {
-//    	Assert.assertEquals(prop.getProperty("dashboard_url"),actual_url,"The actual and expected url don’t match, login failed!!");
-//    }
+    public static void  teamsOption() {
+    	
+    	sleep(3);
+    	waitForVisibility(Home_Page.products_option);
+    	click(Home_Page.products_option);
+    	waitForVisibility(Home_Page.teams_option);
+    	click(Home_Page.teams_option);
+    	
+    	
+    }
+  
 
 }

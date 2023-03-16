@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-22T18:14:41 IST" name="Default suite" finished-at="2023-02-22T18:15:36 IST" duration-ms="55319">
+  <suite started-at="2023-03-16T17:52:01 IST" name="Default suite" finished-at="2023-03-16T17:53:27 IST" duration-ms="85967">
     <groups>
     </groups>
-    <test started-at="2023-02-22T18:14:41 IST" name="Default test" finished-at="2023-02-22T18:15:36 IST" duration-ms="55319">
-      <class name="Test_Case.Test_Case_Implementation">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:Test_Case.Test_Case_Implementation@7393222f]" started-at="2023-02-22T18:14:41 IST" name="openBrowser" finished-at="2023-02-22T18:14:45 IST" duration-ms="4459" status="PASS">
+    <test started-at="2023-03-16T17:52:01 IST" name="Default test" finished-at="2023-03-16T17:53:27 IST" duration-ms="85967">
+      <class name="Test_Case.Broker_Test_Case_Implementation">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:Test_Case.Broker_Test_Case_Implementation@38604b81]" started-at="2023-03-16T17:52:01 IST" name="openBrowser" finished-at="2023-03-16T17:52:08 IST" duration-ms="6704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="testing_username_insertion()[pri:0, instance:Test_Case.Test_Case_Implementation@7393222f]" started-at="2023-02-22T18:14:45 IST" name="testing_username_insertion" finished-at="2023-02-22T18:15:35 IST" duration-ms="49998" status="PASS">
+        <test-method signature="brightMlsBrokerTest()[pri:0, instance:Test_Case.Broker_Test_Case_Implementation@38604b81]" started-at="2023-03-16T17:52:08 IST" name="brightMlsBrokerTest" finished-at="2023-03-16T17:53:27 IST" duration-ms="79135" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testing_username_insertion -->
-        <test-method is-config="true" signature="close()[pri:0, instance:Test_Case.Test_Case_Implementation@7393222f]" started-at="2023-02-22T18:15:35 IST" name="close" finished-at="2023-02-22T18:15:36 IST" duration-ms="734" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- Test_Case.Test_Case_Implementation -->
+        </test-method> <!-- brightMlsBrokerTest -->
+      </class> <!-- Test_Case.Broker_Test_Case_Implementation -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

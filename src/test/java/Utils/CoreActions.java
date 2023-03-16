@@ -23,16 +23,38 @@ public class CoreActions extends CoreTestIntegration {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(element));
         return isVisible;
     }
-    public static void waittillurlis() {
+    public static void waitForDashboardUrl() {
         String changed_url = "https://www.tst.brightmls.com/dashboard";
-        WebDriverWait wait = new WebDriverWait(driver, 20);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlMatches(changed_url));
+    }
+    public static void waitForTeamsPageUrl() {
+        String changedUrl = "https://www.tst.brightmls.com/products/teams-auth";
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
+    }
+    
+    public static void waitForManageTeamsPageUrl() {
+        String changedUrl = "https://teams.tst.brightmls.com/manageTeam";
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
+    }
+    
+    public static void waitForManageBrokeragePageUrl() {
+        String changedUrl = "https://teams.tst.brightmls.com/manageBrokerage";
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
+    }
+    public static void waitForTeamsSignUpPage() {
+        String changedUrl = "https://teams.tst.brightmls.com/TeamSignUp";
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
     }
     public static void click(By element)
     {
         driver.findElement(element).click();
     }
-    public static void enter_values(By element,String text)
+    public static void enter_value(By element,String text)
     {
         driver.findElement(element).sendKeys(text);
     }

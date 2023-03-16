@@ -19,7 +19,12 @@ public class CoreTestIntegration {
 	protected WebDriver driver;
     protected Login_Page_Func login_page_obj;
     protected Home_Page_Func home_page_obj;
-    protected String actual_url;
+    protected Team_Page_Func team_page_obj;
+    protected Broker_Home_Page_Func broker_home_page_obj;
+    protected Broker_Manage_Brokerage_Page_Func broker_manage_brokerage_page_obj;
+    protected TL_Home_Page_Func tl_home_page_obj;
+    protected TL_Manage_Team_Page_Func tl_manage_team_page_func;
+    
     
     @BeforeClass
     public void openBrowser() throws IOException {
@@ -36,15 +41,18 @@ public class CoreTestIntegration {
         driver.get(prop.getProperty("url"));
         login_page_obj=new Login_Page_Func(driver);
         home_page_obj=new Home_Page_Func(driver);
-//        actual_url=driver.getCurrentUrl();
-//        System.out.print(actual_url);
+        team_page_obj=new Team_Page_Func(driver);
+        broker_home_page_obj=new Broker_Home_Page_Func(driver);
+        broker_manage_brokerage_page_obj=new Broker_Manage_Brokerage_Page_Func(driver);
+        tl_home_page_obj=new TL_Home_Page_Func(driver);
+        tl_manage_team_page_func=new TL_Manage_Team_Page_Func(driver);
         
     }
     
-    @AfterClass(alwaysRun=true)
-    public void close()
-    {
-        driver.quit();
-    }
+//    @AfterClass(alwaysRun=true)
+//    public void close()
+//    {
+//        driver.quit();
+//    }
 
 }
