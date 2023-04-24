@@ -1,6 +1,7 @@
 package Object_Repository;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
 
 public class Team_Page {
 	
@@ -8,12 +9,21 @@ public class Team_Page {
 	public static final By teamleadoption = By.xpath("(//div[@id='TeamSignUp_Step1_component__RadioGroup']//span)[1]"); 
 	public static final By teamnameoption = By.xpath("//div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-fullWidth MuiInputBase-formControl']//input"); 
 	public static final By premiumteamoption = By.xpath("//button[@id='premiumPlanSelectButton']"); 
+	public static final By basicteamoption= By.xpath("//button[@id='basicPlanSelectButton']");
 	public static final By popup = By.xpath("//div[@id='pendo-g-5GrKo8nRRzApLsSvUoBfa-KbSGo']"); 
 	public static final By popupclose = By.xpath("//button[@id='pendo-close-guide-24a5e9da']");
 	public static final By aggrementcheckbox1 = By.xpath("//div[@class='step3TermOfServiceSection']//span//span[1]");
 	public static final By aggrementcheckbox2 = By.xpath("//div[@class='step3TeamLeadAgreementSection']//span//span[1]");
 	public static final By submit = By.xpath("//button[@class='MuiButtonBase-root MuiButton-root MuiButton-contained brokerApprovalButton MuiButton-containedSecondary']");
 	public static final By submission =By.xpath("//div[@id='h7bovyu10p_rm_heading_discription']//h1");
+	public static final By agentcheckbox1=By.xpath("//div[@role='radiogroup']//input[@name='teamPriceOption0']");
+	public static final By agentcheckbox2=By.xpath("//div[@role='radiogroup']//input[@name='teamPriceOption1']");
+	public static final By agentcheckbox3=By.xpath("//div[@role='radiogroup']//input[@name='teamPriceOption2']");
+	public static final By teamError=By.xpath("//h1[@class='MuiTypography-root heading MuiTypography-body1 MuiTypography-alignCenter']");
+	public static final By errorCode=By.xpath("//p[@class='MuiTypography-root disclaimer MuiTypography-body1 MuiTypography-alignCenter']");
+	public static final By teamError2=By.xpath("//h1[@class='MuiTypography-root heading MuiTypography-body1 MuiTypography-alignCenter']");
+	
+	
 	
 	public static final By rootdivcont1 = By.xpath("(//div[@class='MuiGrid-root wrapper-container']//h2)[1]"); 
 	public static final By rootdivcont2 = By.xpath("(//div[@class='MuiGrid-root wrapper-container']//h2)[2]"); 

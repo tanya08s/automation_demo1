@@ -2,17 +2,22 @@ package Page_Functions;
 
 import Utils.CoreActions;
 
-import org.openqa.selenium.WebDriver;
+import java.util.ArrayList;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import Object_Repository.Home_Page;
 import Object_Repository.Login_Page;
 
 public class Login_Page_Func extends CoreActions {
 	
-	    protected WebDriver driver1;
+	    protected static WebDriver driver1;
 	    public Login_Page_Func(WebDriver driver)
 	    {
 	        super(driver);
-	        this.driver1=driver;
+	        Login_Page_Func.driver1=driver;
 
 	    }
 	    public static void sendUsername(String text)
@@ -45,4 +50,42 @@ public class Login_Page_Func extends CoreActions {
 		   sendUsername(username);
 		   sendPassword(password);
 	   }
+	   public static void loginWithTMCredentials() {
+		   String username = prop.getProperty("teamMemberId");
+		   String password = prop.getProperty("password");
+		   sendUsername(username);
+		   sendPassword(password);
+	   }
+	   public static void logOutByMenu() {
+//		   click(Home_Page.menu);
+//		   click(Login_Page.logOut);
+		   logOutUrl();
+		   sleep(2);
+//           Assert.assertTrue(driver.getCurrentUrl().contains("logout"),"logout is not successful.");
+           waitForLogOut(Login_Page.logIn);
+		   click(Login_Page.logIn);
+		   waitForLogInHome();
+		   click(Login_Page.logInBtn);
+		   waitForLogInPage();
+//		   driver1.navigate().refresh();
+		   sleep(5);
+	   }
+	   public static void logOutByURL() {
+		   logOutUrl();
+		   sleep(2);
+		   click(Login_Page.logIn);
+		   waitForLogInHome();
+		   click(Login_Page.logInBtn);
+		   waitForLogInPage();
+	   }
+	   
+	   public static void switchToNewLogin() {
+	     	
+	     	((JavascriptExecutor) driver).executeScript("window.open()");
+	     	ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+	     	driver.switchTo().window(tabs.get(1));
+	     	String url = "https://login.tst.brightmls.com/login";
+	     	driver.navigate().to(url);
+
+	     }
 }

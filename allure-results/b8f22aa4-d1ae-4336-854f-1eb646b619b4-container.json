@@ -1,0 +1,1 @@
+{"uuid":"b8f22aa4-d1ae-4336-854f-1eb646b619b4","name":"Test_Case.Team_Test_Case_Implementation","children":["f64bf5bc-92a6-4253-bfe8-1e0216b19e29"],"befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1681819959199,"stop":1681819964441}],"afters":[],"start":1681819959168,"stop":1681820106431}

@@ -1,0 +1,1 @@
+{"uuid":"5ee3ea69-561c-4ec6-85dc-b6201273b3d6","name":"Test_Case.Broker_Test_Case_Implementation","children":["f58c7ab8-00b4-42ea-a90d-554459830d0f"],"befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1679054906634,"stop":1679054914522}],"afters":[],"start":1679054906572,"stop":1679055017883}

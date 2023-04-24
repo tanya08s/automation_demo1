@@ -1,11 +1,19 @@
 package Utils;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import org.openqa.selenium.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver.WindowType;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class CoreActions extends CoreTestIntegration {
 	
@@ -39,7 +47,34 @@ public class CoreActions extends CoreTestIntegration {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.urlMatches(changedUrl));
     }
-    
+    public static void openTeamSignUpUrl() {
+    	
+    	((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+    	driver.get(prop.getProperty("url2"));
+    }
+    public static void teamsProductivityUrl() {
+    	
+    	String changed_url = "https://teams.tst.brightmls.com/teamProductivityDetails/2023";
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlMatches(changed_url));
+    }
+	public static void waitForLogOut(By element) {
+		
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+    }
+    public static void waitForLogInHome() {
+    	String changedUrl = "https://www.tst.brightmls.com/home";
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
+    }
+    public static void waitForLogInPage() {
+    	String changedUrl = "https://login.tst.brightmls.com/login";
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
+    }
     public static void waitForManageBrokeragePageUrl() {
         String changedUrl = "https://teams.tst.brightmls.com/manageBrokerage";
         WebDriverWait wait = new WebDriverWait(driver, 40);
@@ -50,6 +85,63 @@ public class CoreActions extends CoreTestIntegration {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.urlMatches(changedUrl));
     }
+    public static void waitForOktaURL() {
+        String changedUrl = "https://okta.brightmls.com/";
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.urlMatches(changedUrl));
+    }
+    public static void logOutUrl() {
+    	String url = "https://www.tst.brightmls.com/logout";
+    	driver.navigate().to(url);
+
+    }
+    public static void teamSignUpPageURL() {
+    	String url = "https://teams.tst.brightmls.com/TeamSignUp";
+    	driver.navigate().to(url);
+
+    }
+   
+    public static void scroll() {
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("window.scrollBy(0,400)", "");
+    }
+    public static void elementclick(By e) {
+    	
+    	WebElement l = currentEle(e);
+    	JavascriptExecutor ex = (JavascriptExecutor)driver;
+    	ex.executeScript("arguments[0].click();", l);
+    	}
+    
+    public static void checkOktaURL() {
+    	
+    	List<String> browserTabs = new ArrayList<String> (driver.getWindowHandles());
+    	driver.switchTo().window(browserTabs .get(1));
+    	waitForOktaURL();
+    	driver.close();
+    	driver.switchTo().window(browserTabs.get(0));
+    	
+    }
+    public static String currentelement(By e) { 
+    	
+    	String text=driver.findElement(e).getText();
+        return text;
+    }
+  public static WebElement currentEle(By e) { 
+    	
+    	WebElement ele=driver.findElement(e);
+        return ele;
+    }
+    
+    public static String getAttribute(By e,String val) { 
+    	
+    	String ele=driver.findElement(e).getAttribute(val);
+        return ele;
+    }
+    public static List<WebElement> currentelements(By e) { 
+    	
+        List <WebElement> ls=driver.findElements(e);
+        return ls;
+    }
     public static void click(By element)
     {
         driver.findElement(element).click();
@@ -58,10 +150,16 @@ public class CoreActions extends CoreTestIntegration {
     {
         driver.findElement(element).sendKeys(text);
     }
+    public static void sendKey(By element,Keys key)
+    {
+      currentEle(element);  
+      driver.findElement(element).sendKeys(key);
+    }
     public static void clear_data(By element)
     {
         driver.findElement(element).clear();
     }
+ 
     public static void sleep(double sec)
     {
         try {
@@ -73,6 +171,46 @@ public class CoreActions extends CoreTestIntegration {
     }
     public static void verifyAvailable(By element) {
     	driver.findElement(element);
+    }
+    public static boolean verifyTextNotNull(By element) {
+    	String s=currentelement(element);
+    	if (s == null || s.isEmpty() || s.trim().isEmpty()) {
+    		return false;
+    	}
+    	else {
+    		return true;
+    	}
+    	
+    }
+    public static boolean verifyAvailableAndVisible(By element) {
+    	
+    	 try {
+             driver.findElement(element).isDisplayed();
+         } 
+         catch (Exception e) {
+             return false;
+         }
+    	 return true;  	
+    }
+    public static boolean verifyElementAbsent(By element){
+        try {
+            driver.findElement(element);
+            return false;
+
+        } 
+        catch (NoSuchElementException e) {
+            return true;
+        }
+    }
+    public static boolean verifyElementPresence(By element) {
+    	try {
+    		if(driver.findElement(element).isDisplayed()==true);
+        	return true;
+    	}
+    	catch (NoSuchElementException e) {
+            return false;
+        }
+    	
     }
 
 }
