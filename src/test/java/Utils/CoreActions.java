@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import Object_Repository.Manage_Brokerage_Page;
 
 public class CoreActions extends CoreTestIntegration {
 	
@@ -100,7 +100,7 @@ public class CoreActions extends CoreTestIntegration {
     	driver.navigate().to(url);
 
     }
-   
+    
     public static void scroll() {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
     	js.executeScript("window.scrollBy(0,400)", "");
@@ -131,7 +131,20 @@ public class CoreActions extends CoreTestIntegration {
     	WebElement ele=driver.findElement(e);
         return ele;
     }
-    
+  
+  public static void loadingWait() {
+	  
+	  WebElement element=currentEle(Manage_Brokerage_Page.loader);
+  	  WebDriverWait wait = new WebDriverWait(driver, 5000L);
+      wait.until(ExpectedConditions.visibilityOf(element)); 
+      wait.until(ExpectedConditions.invisibilityOf(element)); 
+  }
+  
+  public static void waitTillDisapper(By e) {
+	  WebElement element=currentEle(e);
+	  WebDriverWait wait = new WebDriverWait(driver, 5000L);
+	  wait.until(ExpectedConditions.invisibilityOf(element)); 
+  }
     public static String getAttribute(By e,String val) { 
     	
     	String ele=driver.findElement(e).getAttribute(val);

@@ -318,20 +318,24 @@ public class Team_Page_Func extends CoreActions {
     	
     }
     
-    public static void submit() {
-    	
-    	waitForVisibility(Team_Page.submit);
-    	click(Team_Page.submit);
-    	sleep(5);
-    	
-    }
+    
     public static void verifyTeamReqSubmission() {
     	
     	sleep(2);
     	waitForVisibility(Team_Page.submission);
     	String c = currentelement(Team_Page.submission);
 	  	Assert.assertEquals(prop.getProperty("submissionText"), c);
+	  	System.out.println("Team request successfully submitted");
     	
+    }
+    
+   public static void submit() {
+    	
+    	waitForVisibility(Team_Page.submit);
+    	click(Team_Page.submit);
+    	sleep(5);
+    	verifyTeamReqSubmission();
+    		
     }
     public static void teamError() {
     	
@@ -375,6 +379,7 @@ public class Team_Page_Func extends CoreActions {
     	teamsProOption();
     	submit();
     	sleep(2);
+    	
     }
     
     

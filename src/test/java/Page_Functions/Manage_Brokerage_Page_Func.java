@@ -1,6 +1,7 @@
 package Page_Functions;
 
 import Object_Repository.Manage_Brokerage_Page;
+import Object_Repository.Manage_Team_Page;
 import Object_Repository.Team_Page;
 import Utils.CoreActions;
 import junit.framework.Assert;
@@ -45,7 +46,11 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
     		click(Manage_Brokerage_Page.disband_option);
     		waitForVisibility(Manage_Brokerage_Page.disbandButton);
     		click(Manage_Brokerage_Page.disbandButton);
-    		sleep(3);
+    		loadingWait();
+    		waitForVisibility(Manage_Brokerage_Page.team_disband_alert);
+    		waitTillDisapper(Manage_Brokerage_Page.team_disband_alert);
+    		sleep(2);
+    		System.out.println("Team disbanded successfully");
     	}else {
     		System.out.println("No such team exists!!");
     	}
@@ -59,24 +64,38 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
         click(Manage_Brokerage_Page.declineTeam);
         waitForVisibility(Manage_Brokerage_Page.declineAlert);
         click(Manage_Brokerage_Page.declineAlert);
+        loadingWait();
+        waitForVisibility(Manage_Brokerage_Page.team_decline_alert);
+        waitTillDisapper(Manage_Brokerage_Page.team_decline_alert);
         sleep(3);
-    	
+    	System.out.println("Team declined successfully");
     }
-    
+    public static void VerifyTeamAcceptance() {
+   	 
+    	waitForVisibility(Manage_Brokerage_Page.team_acceptance_alert);
+    	String c = currentelement(Manage_Brokerage_Page.team_acceptance_alert);
+ 	  	Assert.assertEquals(prop.getProperty("teamAcceptanceSuccess"), c);
+ 	  	waitTillDisapper(Manage_Brokerage_Page.team_acceptance_alert);
+        sleep(3);
+    	 
+     }
     public static void acceptTeam() {
     	
     	sleep(3);
     	waitForVisibility(Manage_Brokerage_Page.acceptTeam);
         click(Manage_Brokerage_Page.acceptTeam);
-//        sleep(3);
+        loadingWait();
         VerifyTeamAcceptance();
-        sleep(3);
+        System.out.println("Team accepted successfully");
     	
     }
+    
+    public static void verifyTeamDisband() {
+   	 Assert.assertTrue(verifyElementAbsent(Manage_Brokerage_Page.team_name));
+    }
+    
     public static void checkTeamReq() {
-    	sleep(2);
-    	sleep(2);
-    	sleep(3);
+    	
     	waitForVisibility(Manage_Brokerage_Page.rows_per_page);
     	click(Manage_Brokerage_Page.rows_per_page);
     	waitForVisibility(Manage_Brokerage_Page.all_rows);
@@ -85,7 +104,13 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
     		click(Manage_Brokerage_Page.disband_option);
     		waitForVisibility(Manage_Brokerage_Page.disbandAlertHeading);
     		click(Manage_Brokerage_Page.disbandButton);
-    		waitForVisibility(Manage_Brokerage_Page.team_acceptance_alert);
+    		loadingWait();
+    		waitForVisibility(Manage_Brokerage_Page.team_disband_alert);
+    		waitTillDisapper(Manage_Brokerage_Page.team_disband_alert);
+    		sleep(2);
+    		System.out.println("Team disbanded successfully");
+    		verifyTeamDisband();
+    		
     	}
     	else if(verifyElementPresence(Manage_Brokerage_Page.declineTeam)==true) {
     		declineTeam();
@@ -95,13 +120,6 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
     	}
     }
     	
-     public static void VerifyTeamAcceptance() {
-    	 
-    	waitForVisibility(Manage_Brokerage_Page.team_acceptance_alert);
-    	String c = currentelement(Manage_Brokerage_Page.team_acceptance_alert);
- 	  	Assert.assertEquals(prop.getProperty("teamAcceptanceSuccess"), c);
-    	 
-     }
      public static void verifyDisbandAlertContent() {
     	 
     	waitForVisibility(Manage_Brokerage_Page.disbandAlertHeading);

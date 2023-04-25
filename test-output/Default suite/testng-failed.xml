@@ -8,6 +8,7 @@
           <include name="openBrowser"/>
           <include name="checkTeamStatus"/>
           <include name="Team"/>
+          <include name="close"/>
         </methods>
       </class> <!-- Test_Case.Team_Test_Case_Implementation -->
     </classes>

@@ -27,12 +27,8 @@ public class Team_Test_Case_Implementation extends CoreTestIntegration {
 	public void Team() {
 		Login_Page_Func.loginWithCredentials();
         Login_Page_Func.ClickSubmit();
-        Home_Page_Func.closePopUp();
         Team_Page_Func.teamCreationByUrl();
         Team_Page_Func.makeTeam();
-      
-//        Home_Page_Func.closePopUp();
-//        Home_Page_Func.teamsOption();
         Login_Page_Func.logOutByMenu();
         Login_Page_Func.loginWithBrokerCredentials();
         Login_Page_Func.ClickSubmit();

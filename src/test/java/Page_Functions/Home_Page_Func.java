@@ -2,6 +2,7 @@ package Page_Functions;
 
 
 import Object_Repository.Home_Page;
+import Object_Repository.Manage_Brokerage_Page;
 import Utils.CoreActions;
 import junit.framework.Assert;
 
@@ -63,9 +64,15 @@ public class Home_Page_Func extends CoreActions {
     	
     	waitForVisibility(Home_Page.menu);
     	click(Home_Page.menu);
+    	sleep(2);
     	waitForVisibility(Home_Page.brokerage_teams_option);
     	click(Home_Page.brokerage_teams_option);
     	sleep(2);
+    	sleep(2);
+    	sleep(2);
+    	sleep(3);
+    	loadingWait();
+    	waitForVisibility(Manage_Brokerage_Page.brokerPageHeading);
     	
     }
     
