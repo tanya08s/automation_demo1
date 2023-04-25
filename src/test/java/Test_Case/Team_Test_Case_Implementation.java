@@ -18,18 +18,17 @@ public class Team_Test_Case_Implementation extends CoreTestIntegration {
 		Login_Page_Func.loginWithBrokerCredentials();
         Login_Page_Func.ClickSubmit();
 		Home_Page_Func.closePopUp();
-//		Home_Page_Func.openBrokerageTeamsOption();
-//		Manage_Brokerage_Page_Func.checkTeamReq();
+		Home_Page_Func.openBrokerageTeamsOption();
+		Manage_Brokerage_Page_Func.checkTeamReq();
 		Login_Page_Func.logOutByMenu();
 	}
 	
 	@Test
 	public void Team() {
-		
 		Login_Page_Func.loginWithCredentials();
         Login_Page_Func.ClickSubmit();
         Home_Page_Func.closePopUp();
-		Team_Page_Func.teamCreationByUrl();
+        Team_Page_Func.teamCreationByUrl();
         Team_Page_Func.makeTeam();
       
 //        Home_Page_Func.closePopUp();

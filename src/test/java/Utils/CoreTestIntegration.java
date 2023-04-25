@@ -45,10 +45,10 @@ public class CoreTestIntegration {
         
     }
     
-//    @AfterClass(alwaysRun=true)
-//    public void close()
-//    {
-//        driver.quit();
-//    }
+    @AfterClass(alwaysRun=true)
+    public void close()
+    {
+        driver.quit();
+    }
 
 }

@@ -68,8 +68,9 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
     	sleep(3);
     	waitForVisibility(Manage_Brokerage_Page.acceptTeam);
         click(Manage_Brokerage_Page.acceptTeam);
+//        sleep(3);
+        VerifyTeamAcceptance();
         sleep(3);
-    	
     	
     }
     public static void checkTeamReq() {

@@ -57,18 +57,17 @@ public class Login_Page_Func extends CoreActions {
 		   sendPassword(password);
 	   }
 	   public static void logOutByMenu() {
-//		   click(Home_Page.menu);
-//		   click(Login_Page.logOut);
-		   logOutUrl();
+		   sleep(1);
+		   click(Home_Page.menu);
 		   sleep(2);
+		   click(Login_Page.logOut);
+		   sleep(4);
 //           Assert.assertTrue(driver.getCurrentUrl().contains("logout"),"logout is not successful.");
            waitForLogOut(Login_Page.logIn);
 		   click(Login_Page.logIn);
 		   waitForLogInHome();
 		   click(Login_Page.logInBtn);
-		   waitForLogInPage();
-//		   driver1.navigate().refresh();
-		   sleep(5);
+		   waitForLogInPage();		
 	   }
 	   public static void logOutByURL() {
 		   logOutUrl();
