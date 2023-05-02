@@ -34,7 +34,7 @@ public class Team_Test_Case_Implementation extends CoreTestIntegration {
         Login_Page_Func.ClickSubmit();
 		Home_Page_Func.closePopUp();
 		Home_Page_Func.openBrokerageTeamsOption();
-		Manage_Brokerage_Page_Func.acceptTeam();
+		Manage_Brokerage_Page_Func.acceptArcherTeam();
 		Login_Page_Func.logOutByMenu();
 		Login_Page_Func.loginWithCredentials();
         Login_Page_Func.ClickSubmit();

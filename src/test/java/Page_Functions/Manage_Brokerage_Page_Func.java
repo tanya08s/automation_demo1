@@ -18,6 +18,8 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
 	
 	protected WebDriver driver6;
 	public static boolean reqSent;
+	public static String newTeamName;
+	public static String TLName;
     public Manage_Brokerage_Page_Func(WebDriver driver)
     {
         super(driver);
@@ -79,16 +81,27 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
         sleep(3);
     	 
      }
-    public static void acceptTeam() {
+    public static void acceptTeam(By e) {
     	
     	sleep(3);
-    	waitForVisibility(Manage_Brokerage_Page.acceptTeam);
-        click(Manage_Brokerage_Page.acceptTeam);
+    	waitForVisibility(e);
+        click(e);
         loadingWait();
         VerifyTeamAcceptance();
         System.out.println("Team accepted successfully");
     	
     }
+
+    public static void acceptArcherTeam() {
+    	
+    	acceptTeam(Manage_Brokerage_Page.acceptTeam);
+    }
+    
+    public static void acceptKellyTeam() {
+    	
+    	acceptTeam(Manage_Brokerage_Page.acceptKellyTeam);
+    }
+    
     
     public static void verifyTeamDisband() {
    	 Assert.assertTrue(verifyElementAbsent(Manage_Brokerage_Page.team_name));
@@ -119,7 +132,32 @@ public class Manage_Brokerage_Page_Func extends CoreActions{
     		System.out.println("Team not found!!");
     	}
     }
+     
+    public static void editTeam() {
     	
+    	sleep(2);
+    	waitForVisibility(Manage_Brokerage_Page.rows_per_page);
+    	click(Manage_Brokerage_Page.rows_per_page);
+    	waitForVisibility(Manage_Brokerage_Page.all_rows);
+    	click(Manage_Brokerage_Page.all_rows);	
+    	waitForVisibility(Manage_Brokerage_Page.editKellyTeam);
+    	click(Manage_Brokerage_Page.editKellyTeam);
+    	loadingWait();
+    	scroll();
+    	waitForVisibility(Manage_Brokerage_Page.editTeamName);
+    	String newName=currentelement(Manage_Brokerage_Page.editTeamName);
+     	clearWebField(Manage_Brokerage_Page.editTeamName);
+    	newTeamName=newName+generateRandom(1);
+    	System.out.println(newTeamName);
+    	enter_value(Manage_Brokerage_Page.editTeamName,newTeamName);
+    	TLName=getAttribute(Manage_Brokerage_Page.TLName,"value");
+    	click(Manage_Brokerage_Page.saveTeamName);
+    	waitForVisibility(Manage_Brokerage_Page.saveTeamNamePopup);
+    	click(Manage_Brokerage_Page.saveTeamNamePopup);
+    	loadingWait();
+    }
+    
+ 	
      public static void verifyDisbandAlertContent() {
     	 
     	waitForVisibility(Manage_Brokerage_Page.disbandAlertHeading);

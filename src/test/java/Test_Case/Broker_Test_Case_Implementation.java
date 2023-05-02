@@ -15,7 +15,7 @@ public class Broker_Test_Case_Implementation extends CoreTestIntegration{
 	@Test
 	public void disbandTeam() {
 		
-		Login_Page_Func.loginWithBrokerCredentials();;
+		Login_Page_Func.loginWithBrokerCredentials();
 		Login_Page_Func.ClickSubmit();
 		Home_Page_Func.closePopUp();
 		Home_Page_Func.openBrokerageTeamsOption();
@@ -33,8 +33,20 @@ public class Broker_Test_Case_Implementation extends CoreTestIntegration{
 		Home_Page_Func.closePopUp();
 		Home_Page_Func.openBrokerageTeamsOption();
 		Manage_Brokerage_Page_Func.verifyManageBrokeragePageUrl();
-		Manage_Brokerage_Page_Func.acceptTeam();
+		Manage_Brokerage_Page_Func.acceptArcherTeam();
 		Manage_Brokerage_Page_Func.VerifyTeamAcceptance();
+		
+	}
+	
+	@Test
+	public void acceptNewTeam() {
+		
+	    Login_Page_Func.loginWithBrokerCredentials();
+        Login_Page_Func.ClickSubmit();
+		Home_Page_Func.closePopUp();
+		Home_Page_Func.openBrokerageTeamsOption();
+		Manage_Brokerage_Page_Func.acceptKellyTeam();
+		Login_Page_Func.logOutByMenu();
 		
 	}
 	@Test
@@ -48,5 +60,6 @@ public class Broker_Test_Case_Implementation extends CoreTestIntegration{
 		Manage_Brokerage_Page_Func.declineTeam();
 		
 	}
+	
 
 }

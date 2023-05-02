@@ -22,7 +22,8 @@ public class CoreTestIntegration {
     protected Team_Page_Func team_page_obj;
     protected Manage_Brokerage_Page_Func broker_manage_brokerage_page_obj;
     protected Manage_Team_Page_Func tl_manage_team_page_func;
-    
+    protected ProductivityView_Page_Func productivityView_page_obj;
+    protected SearchListings_Page_Func listings_page_obj;
     
     @BeforeClass
     public void openBrowser() throws IOException {
@@ -42,13 +43,14 @@ public class CoreTestIntegration {
         team_page_obj=new Team_Page_Func(driver);
         broker_manage_brokerage_page_obj=new Manage_Brokerage_Page_Func(driver);
         tl_manage_team_page_func=new Manage_Team_Page_Func(driver);
-        
+        productivityView_page_obj=new ProductivityView_Page_Func(driver);
+        listings_page_obj=new SearchListings_Page_Func(driver);
     }
     
-    @AfterClass(alwaysRun=true)
-    public void close()
-    {
-        driver.quit();
-    }
+//    @AfterClass(alwaysRun=true)
+//    public void close()
+//    {
+//        driver.quit();
+//    }
 
 }

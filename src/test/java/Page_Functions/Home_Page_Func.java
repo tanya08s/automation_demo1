@@ -3,6 +3,7 @@ package Page_Functions;
 
 import Object_Repository.Home_Page;
 import Object_Repository.Manage_Brokerage_Page;
+import Object_Repository.Manage_Team_Page;
 import Utils.CoreActions;
 import junit.framework.Assert;
 
@@ -10,9 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import Page_Functions.SearchListings_Page_Func;
 
 public class Home_Page_Func extends CoreActions {
 	
@@ -59,6 +62,16 @@ public class Home_Page_Func extends CoreActions {
     	click(Home_Page.manage_team);
     	
     }
+    public static void selectListingOption() {
+    	
+    	sleep(2);
+    	sleep(2);
+    	waitForVisibility(Home_Page.SearchOption);
+    	enter_value(Home_Page.SearchOption,SearchListings_Page_Func.ListingId);
+    	sendKey(Home_Page.SearchOption,Keys.ENTER);
+    	waitForMatrixURL();
+	
+    }
     
     public static void openBrokerageTeamsOption() {
     	
@@ -74,6 +87,20 @@ public class Home_Page_Func extends CoreActions {
     	loadingWait();
     	waitForVisibility(Manage_Brokerage_Page.brokerPageHeading);
     	
+    }
+    public static void selectYearProdDiv() {
+    	scroll();
+    	waitForVisibility(Home_Page.prodDivDropdown);
+    	elementclick(Home_Page.prodDivDropdown);
+    	sendKey(Home_Page.prodDivDropdown,Keys.ARROW_DOWN);
+    	String dropdownVal=getAttribute(Home_Page.prodDivDropdown,"class");
+    	Assert.assertTrue(dropdownVal+" is shown",dropdownVal.contains("dropdown-selected-2022"));
+    	System.out.println(dropdownVal);
+    	elementclick(Manage_Team_Page.viewDetails);
+		teamsProductivityUrl();
+		loadingWait();
+		
+		
     }
     
     public static void checkNoOfRISNewsLinks() {

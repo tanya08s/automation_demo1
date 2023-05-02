@@ -51,4 +51,15 @@ public class Manage_Team_Page {
     public static final By setProductivityViewTM1= By.xpath("//div[@id='report_view_select_id1']");
     public static final By teamDropdown= By.xpath("(//ul[@role='listbox']//li)[1]");
     public static final By individualDropdown= By.xpath("(//ul[@role='listbox']//li)[2]");
+    public static final By tlGoals= By.xpath("(//div[@class='viewGoalDiv setGoalColor'])[1]");
+    public static final By tmGoals= By.xpath("//div[@class='viewGoalDiv setGoalColor']");
+    public static final By goalsDiv= By.xpath("//div[@role='dialog']");
+    public static final By salesGoalInput= By.xpath("//input[@id='formatted-numberformat-input_salesGoal']");
+    public static final By revenueGoalInput= By.xpath("//input[@id='formatted-numberformat-input_revenueGoal']");
+    public static final By saveGoals= By.xpath("//button[@id='popup_button_save_goals']");
+    public static final By closeGoals= By.xpath("(//*[local-name()='svg' and @class='MuiSvgIcon-root']/*[local-name()='path'])[7]");
+    public static final By homePage= By.xpath("//img[@src='https://menu.tst.brightmls.com/assets/global/images/bright.svg']");
+    public static final By viewGoals= By.xpath("//div[@class='viewGoalDiv viewGoalColor']");
+
 }
+

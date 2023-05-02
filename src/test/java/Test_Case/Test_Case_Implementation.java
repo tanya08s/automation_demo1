@@ -56,6 +56,17 @@ public class Test_Case_Implementation  extends CoreTestIntegration {
 	    }
 	    
 	    @Test
+		public void createNewTeam() {
+			
+			Login_Page_Func.loginWithNewTLCredentials();
+			Login_Page_Func.ClickSubmit();
+		    Team_Page_Func.teamCreationByUrl();
+		    Team_Page_Func.makeNewTeam();
+		    Login_Page_Func.logOutByMenu();
+			
+		}
+	    
+	    @Test
 	    public void verifyTeamCreationError2() {
 	    	
 	    	Login_Page_Func.loginWithCredentials();
@@ -75,7 +86,15 @@ public class Test_Case_Implementation  extends CoreTestIntegration {
 	        Home_Page_Func.selectManageTeamOption();
 	    	Manage_Team_Page_Func.addTeamMember();
 	    }
-	    
+	    @Test
+		public void addTeamMemberNewTeam() {
+	    	
+	    	Login_Page_Func.loginWithNewTLCredentials();
+	        Login_Page_Func.ClickSubmit();
+	        Home_Page_Func.closePopUp();
+	        Home_Page_Func.selectManageTeamOption();
+	    	Manage_Team_Page_Func.addTeamMember();
+	    }
 	    @Test
 	    public void verifyTMResendRequest(){
 	    	

@@ -12,12 +12,16 @@ import org.openqa.selenium.WebElement;
 import Object_Repository.Manage_Brokerage_Page;
 import Object_Repository.Manage_Team_Page;
 import Object_Repository.Team_Page;
+import Utils.CoreActions;
 
 public class Manage_Team_Page_Func extends CoreActions {
 	
 	protected WebDriver driver8;
 	protected static String teamMemberView;
 	protected static String teamLeadView;
+	public static int TLGoalValue=0,TLRevenueValue=0,TMGoalValue=0,TMRevenueValue=0;
+	public static int TotalGoal=0;
+	
     public Manage_Team_Page_Func(WebDriver driver)
     {
         super(driver);
@@ -30,7 +34,7 @@ public class Manage_Team_Page_Func extends CoreActions {
     	String manageTeamPageUrl=driver.getCurrentUrl();
     	System.out.print(manageTeamPageUrl);
     	Assert.assertTrue(manageTeamPageUrl.contains("https://teams.tst.brightmls.com/manageTeam"));
-    	sleep(2);
+    	loadingWait();
     	
     }
     
@@ -115,7 +119,7 @@ public class Manage_Team_Page_Func extends CoreActions {
     	sleep(6);
     	waitForVisibility(Manage_Team_Page.searchBox);
     	scroll();
-    	enter_value(Manage_Team_Page.searchBox,prop.getProperty("teamMemberId"));
+    	enter_value(Manage_Team_Page.searchBox,prop.getProperty("newusertm"));
     	sleep(4);
 //    	WebElement e1 = currentEle(Manage_Team_Page.searchBox);
     	sendKey(Manage_Team_Page.searchBox,Keys.ARROW_DOWN);
@@ -125,7 +129,8 @@ public class Manage_Team_Page_Func extends CoreActions {
     	sendKey(Manage_Team_Page.searchBox,Keys.RETURN);
     	waitForVisibility(Manage_Team_Page.inviteToTeamButton);
     	click(Manage_Team_Page.inviteToTeamButton);
-    	sleep(2);    	
+    	loadingWait(); 
+    	
     }
     
     public static void resendTMInvite() {
@@ -248,6 +253,53 @@ public class Manage_Team_Page_Func extends CoreActions {
     	}
     	
     }
+    public static void setGoals(By e, String goals, String revenue) {
+    	
+    	waitForVisibility(e);
+    	click(e);
+    	waitForVisibility(Manage_Team_Page.goalsDiv);
+    	enter_value(Manage_Team_Page.salesGoalInput,goals);
+    	enter_value(Manage_Team_Page.revenueGoalInput,revenue);
+    	click(Manage_Team_Page.saveGoals);
+    	waitForVisibility(Manage_Team_Page.viewGoals);
+    	
+    }
+    public static void setTLGoals() {
+    	
+    	String goals="10";
+    	TLGoalValue=Integer.parseInt(goals);
+    	String revenue="10000";
+    	TLRevenueValue=Integer.parseInt(revenue); 
+    	setGoals(Manage_Team_Page.tlGoals,goals,revenue);
+    	TotalGoal+=TLGoalValue;
+    	System.out.println("team lead goals set successfully"+" "+TLGoalValue);
+    	
+    }
+   
+    public static void setTMGoals() {
+    	
+  
+    	String goals="5";
+    	TMGoalValue=Integer.parseInt(goals);
+    	String revenue="5000";
+    	TMRevenueValue=Integer.parseInt(revenue); 
+    	setGoals(Manage_Team_Page.tmGoals,goals,revenue);
+    	TotalGoal+=TMGoalValue;
+    	System.out.println("team member goals set successfully"+" "+TMGoalValue);
+
+    	
+    }
+    
+    public static void navigateToDashboard() {
+    	
+    	click(Manage_Team_Page.homePage);
+    	waitForDashboardUrl();
+    	
+    }
+    
+    
+    
+    
    
     
 }

@@ -266,17 +266,25 @@ public class Team_Page_Func extends CoreActions {
     	Assert.assertTrue(teamSignUp.contains("https://teams.tst.brightmls.com/TeamSignUp"));	
     }
     
-    public static void teamcreation() {
+    public static void teamcreation(String teamname) {
     	
     	sleep(4);
     	sleep(2);
     	waitForVisibility(Team_Page.teamleadoption);
     	click(Team_Page.teamleadoption);
     	waitForVisibility(Team_Page.teamnameoption);
-    	enter_value(Team_Page.teamnameoption,"Archer Pac Team1");
+    	enter_value(Team_Page.teamnameoption,teamname);
     	
     }
     
+    public static void createArcherTeam() {
+    	teamcreation("Archer Pac Team1");
+    }
+    
+    public static void createKellyTeam() {
+    	teamcreation("Kelly Arc Team1");
+    }
+       
    public static void teamMemberCheckbox() {
 	   
 	    sleep(2);	
@@ -353,7 +361,7 @@ public class Team_Page_Func extends CoreActions {
     public static void creatingTeam() {
     	teamsignup();
     	verifyteamssignupurl();
-    	teamcreation();
+    	createArcherTeam();
     	teamMemberCheckbox();
     	teamsProOption();
     	submit();
@@ -374,12 +382,21 @@ public class Team_Page_Func extends CoreActions {
     public static void makeTeam() {
     	sleep(3);
     	verifyteamssignupurl();
-    	teamcreation();
+    	createArcherTeam();
     	teamMemberCheckbox();
     	teamsProOption();
     	submit();
     	sleep(2);
     	
+    }
+    public static void makeNewTeam() {
+    	sleep(3);
+    	verifyteamssignupurl();
+    	createKellyTeam();
+    	teamMemberCheckbox();
+    	teamsProOption();
+    	submit();
+    	sleep(2);
     }
     
     
@@ -390,7 +407,7 @@ public class Team_Page_Func extends CoreActions {
     	System.out.println(c);
     	if(c.equals(prop.getProperty("rootDivCont7"))){
     		openTeamSignUpUrl();
-        	teamcreation();
+    		createArcherTeam();
         	teamMemberCheckbox();
         	teamsOption();
         	submit();

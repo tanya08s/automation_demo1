@@ -30,5 +30,11 @@ public class Home_Page {
 	public static final By risReportCard3= By.xpath("//div[@class='RISMedia_container_panel_0_RISReports']//a[3]");
 	public static final By risReportButton= By.xpath("//a[@id='RISMedia_container_panel_0_RISReports_viewAll_container']");
 	public static final By checkTeamText= By.xpath("(//p[@class='MuiTypography-root icon-text MuiTypography-body1'])[3]");
+	public static final By SearchOption= By.xpath("//input[@id='workspace_header_container_item_2_box_text_field_mlsNumber']");
+	public static final By search=By.xpath("//*[local-name()='svg' and @class='MuiSvgIcon-root ws_hd_search_icon']/*[local-name()='path']");
+	public static final By prodDivDropdown= By.xpath("//select[@id='hotOptionsId-productivity-widget-year-options']");
+	public static final By year2022= By.xpath("//select[@id='hotOptionsId-productivity-widget-year-options']//option[2]");
+	public static final By viewDetails= By.xpath("//a[@id='list_activity_anchor_productivityOverview-container']");
+	
 	
 }

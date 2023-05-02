@@ -56,9 +56,9 @@ public class CoreActions extends CoreTestIntegration {
     }
     public static void teamsProductivityUrl() {
     	
-    	String changed_url = "https://teams.tst.brightmls.com/teamProductivityDetails/2023";
+    	String changed_url = "https://teams.tst.brightmls.com/teamProductivityDetails";
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        wait.until(ExpectedConditions.urlMatches(changed_url));
+        wait.until(ExpectedConditions.urlContains(changed_url));
     }
 	public static void waitForLogOut(By element) {
 		
@@ -90,6 +90,11 @@ public class CoreActions extends CoreTestIntegration {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.urlMatches(changedUrl));
     }
+    public static void waitForMatrixURL() {
+
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.urlContains("matrix.tst.brightmls"));
+    }
     public static void logOutUrl() {
     	String url = "https://www.tst.brightmls.com/logout";
     	driver.navigate().to(url);
@@ -103,7 +108,11 @@ public class CoreActions extends CoreTestIntegration {
     
     public static void scroll() {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
-    	js.executeScript("window.scrollBy(0,400)", "");
+    	js.executeScript("window.scrollBy(0,500)", "");
+    }
+    public static void scrollup() {
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("window.scrollBy(0,-700)", "");
     }
     public static void elementclick(By e) {
     	
@@ -132,19 +141,32 @@ public class CoreActions extends CoreTestIntegration {
         return ele;
     }
   
-  public static void loadingWait() {
+   public static void loadingWait() {
 	  
 	  WebElement element=currentEle(Manage_Brokerage_Page.loader);
   	  WebDriverWait wait = new WebDriverWait(driver, 5000L);
       wait.until(ExpectedConditions.visibilityOf(element)); 
       wait.until(ExpectedConditions.invisibilityOf(element)); 
-  }
+   }
   
-  public static void waitTillDisapper(By e) {
+   public static void waitTillDisapper(By e) {
 	  WebElement element=currentEle(e);
 	  WebDriverWait wait = new WebDriverWait(driver, 5000L);
 	  wait.until(ExpectedConditions.invisibilityOf(element)); 
-  }
+   }
+    
+   public static  String generateRandom(int l){
+	  
+	  String AlphaNumericStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz0123456789";
+      StringBuilder s = new StringBuilder(l);
+	  int i;
+	  for ( i=0; i<l; i++) {
+		  int ch = (int)(AlphaNumericStr.length() * Math.random());
+		  s.append(AlphaNumericStr.charAt(ch));
+		  }
+	  return s.toString();
+   }
+  
     public static String getAttribute(By e,String val) { 
     	
     	String ele=driver.findElement(e).getAttribute(val);
@@ -161,7 +183,15 @@ public class CoreActions extends CoreTestIntegration {
     }
     public static void enter_value(By element,String text)
     {
+    	
         driver.findElement(element).sendKeys(text);
+    }
+    
+    public static void clearWebField(By e){
+    	WebElement element=currentEle(e);
+        while(!element.getAttribute("value").equals("")){
+            element.sendKeys(Keys.BACK_SPACE);
+        }
     }
     public static void sendKey(By element,Keys key)
     {

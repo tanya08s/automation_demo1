@@ -56,6 +56,24 @@ public class Login_Page_Func extends CoreActions {
 		   sendUsername(username);
 		   sendPassword(password);
 	   }
+	   public static void loginWithNewTLCredentials() {
+		   String username = prop.getProperty("newusertl");
+		   String password = prop.getProperty("password");
+		   sendUsername(username);
+		   sendPassword(password);
+	   }
+	   public static void loginWithNewUserCredentials() {
+		   String username = prop.getProperty("newid1");
+		   String password = prop.getProperty("password1");
+		   sendUsername(username);
+		   sendPassword(password);
+	   }
+	   public static void loginWithNewTMCredentials() {
+		   String username = prop.getProperty("newusertm");
+		   String password = prop.getProperty("password");
+		   sendUsername(username);
+		   sendPassword(password);
+	   }
 	   public static void logOutByMenu() {
 		   sleep(1);
 		   click(Home_Page.menu);
