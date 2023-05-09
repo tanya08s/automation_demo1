@@ -128,6 +128,7 @@ public class Centre_County_Page_Func  extends CoreActions{
     	verifyCardData(sectionName,sectionCount);
     	
     	logger.info("centre county discover bright section verified successfully");
+    	logger.info("centre county discover bright section verified successfully");
     	
     }
     
