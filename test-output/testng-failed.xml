@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Case.ProductivityView_Test_Case_Implementation">
+      <class name="Test_Case.CentreCounty_Test_Case">
         <methods>
           <include name="openBrowser"/>
-          <include name="verifyPreviousYearListingData"/>
+          <include name="verifyDiscoverBrightSection"/>
         </methods>
-      </class> <!-- Test_Case.ProductivityView_Test_Case_Implementation -->
+      </class> <!-- Test_Case.CentreCounty_Test_Case -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

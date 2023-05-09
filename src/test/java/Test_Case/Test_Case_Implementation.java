@@ -158,6 +158,23 @@ public class Test_Case_Implementation  extends CoreTestIntegration {
 	        Home_Page_Func.verifyRISMediaContent();
 	    }
 	    
+	    @Test
+	    public void verifySupportGetStartedURL() {
+	    	
+	    	Login_Page_Func.loginWithCredentials();
+	        Login_Page_Func.ClickSubmit();
+	        Home_Page_Func.closePopUp();
+	        Home_Page_Func.supportGettingStartedOption();
+	        Home_Page_Func.powerUpURL();
+	        Login_Page_Func.logOutByMenu();
+	        Login_Page_Func.loginWithCCARUser();
+	        Login_Page_Func.ClickSubmit();
+	        Home_Page_Func.closePopUp();
+	        Home_Page_Func.supportGettingStartedOption();
+	        Home_Page_Func.centreCountyURL();
+	      
+	    }
+	    
 	    
 	   	
 }

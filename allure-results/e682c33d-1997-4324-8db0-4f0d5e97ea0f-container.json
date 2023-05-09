@@ -1,0 +1,1 @@
+{"uuid":"e682c33d-1997-4324-8db0-4f0d5e97ea0f","name":"Test_Case.CentreCounty_Test_Case","children":["818f2af8-a439-401a-b8e5-b63b191f4cbc"],"befores":[{"name":"openBrowser","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1683617731315,"stop":1683617741028}],"afters":[],"start":1683617731193,"stop":1683617825170}

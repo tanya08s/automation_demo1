@@ -35,6 +35,9 @@ public class Home_Page {
 	public static final By prodDivDropdown= By.xpath("//select[@id='hotOptionsId-productivity-widget-year-options']");
 	public static final By year2022= By.xpath("//select[@id='hotOptionsId-productivity-widget-year-options']//option[2]");
 	public static final By viewDetails= By.xpath("//a[@id='list_activity_anchor_productivityOverview-container']");
-	
+	public static final By supportOption= By.xpath("//ul[@id='mega_menu_top']//li[4]//a[@class='bn-dropdown-toggle']");
+	public static final By supportOptionGettingStarted= By.xpath("//ul[@id='mega_menu_top']//li[4]//a[@class='bn-dropdown-toggle']/..//ul[@class='menu_item_ul']//li[2]");
+	public static final By powerUPHeading= By.xpath("//div[@class='col-sm-6 nopadding']//h2");
+	public static final By centreCountyHeading= By.xpath("//div[@id='centreCountyHeaderSectiontitleWrap']//p"); 
 	
 }

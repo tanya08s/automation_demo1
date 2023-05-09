@@ -44,6 +44,14 @@ public class Login_Page_Func extends CoreActions {
 		   sendPassword(password);
 	   }
 	   
+	   public static void loginWithCCARUser() {
+		   String username = prop.getProperty("usernameC");
+		   String password = prop.getProperty("password1");
+		   sendUsername(username);
+		   sendPassword(password);
+		   
+	   }
+	   
 	   public static void loginWithBrokerCredentials() {
 		   String username = prop.getProperty("username1");
 		   String password = prop.getProperty("password1");

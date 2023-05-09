@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import Page_Functions.*;
@@ -24,6 +25,7 @@ public class CoreTestIntegration {
     protected Manage_Team_Page_Func tl_manage_team_page_func;
     protected ProductivityView_Page_Func productivityView_page_obj;
     protected SearchListings_Page_Func listings_page_obj;
+    protected Centre_County_Page_Func centreCounty_page_obj;
     
     @BeforeClass
     public void openBrowser() throws IOException {
@@ -35,6 +37,8 @@ public class CoreTestIntegration {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+    	String log4jConfPath = "src/test/java/resources/log4j.properties";
+    	PropertyConfigurator.configure(log4jConfPath);
     	driver=new Driver().getDriver();
         driver.manage().window().maximize();
         driver.get(prop.getProperty("url"));
@@ -45,6 +49,7 @@ public class CoreTestIntegration {
         tl_manage_team_page_func=new Manage_Team_Page_Func(driver);
         productivityView_page_obj=new ProductivityView_Page_Func(driver);
         listings_page_obj=new SearchListings_Page_Func(driver);
+        centreCounty_page_obj= new Centre_County_Page_Func(driver);
     }
     
 //    @AfterClass(alwaysRun=true)

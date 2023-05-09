@@ -2,20 +2,20 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-02T17:57:02 IST" name="Default suite" finished-at="2023-05-02T17:59:09 IST" duration-ms="126784">
+  <suite started-at="2023-05-09T16:34:37 IST" name="Default suite" finished-at="2023-05-09T16:36:08 IST" duration-ms="90540">
     <groups>
     </groups>
-    <test started-at="2023-05-02T17:57:02 IST" name="Default test" finished-at="2023-05-02T17:59:09 IST" duration-ms="126784">
-      <class name="Test_Case.ProductivityView_Test_Case_Implementation">
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:Test_Case.ProductivityView_Test_Case_Implementation@69f1a286]" started-at="2023-05-02T17:57:02 IST" name="openBrowser" finished-at="2023-05-02T17:57:21 IST" duration-ms="19318" status="PASS">
+    <test started-at="2023-05-09T16:34:37 IST" name="Default test" finished-at="2023-05-09T16:36:08 IST" duration-ms="90540">
+      <class name="Test_Case.CentreCounty_Test_Case">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:Test_Case.CentreCounty_Test_Case@457c9034]" started-at="2023-05-09T16:34:37 IST" name="openBrowser" finished-at="2023-05-09T16:34:53 IST" duration-ms="15390" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="verifyPreviousYearListingData()[pri:0, instance:Test_Case.ProductivityView_Test_Case_Implementation@69f1a286]" started-at="2023-05-02T17:57:21 IST" name="verifyPreviousYearListingData" finished-at="2023-05-02T17:59:08 IST" duration-ms="107031" status="PASS">
+        <test-method signature="verifyDiscoverBrightSection()[pri:0, instance:Test_Case.CentreCounty_Test_Case@457c9034]" started-at="2023-05-09T16:34:53 IST" name="verifyDiscoverBrightSection" finished-at="2023-05-09T16:36:07 IST" duration-ms="74515" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPreviousYearListingData -->
-      </class> <!-- Test_Case.ProductivityView_Test_Case_Implementation -->
+        </test-method> <!-- verifyDiscoverBrightSection -->
+      </class> <!-- Test_Case.CentreCounty_Test_Case -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

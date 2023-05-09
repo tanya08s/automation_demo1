@@ -110,10 +110,16 @@ public class CoreActions extends CoreTestIntegration {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
     	js.executeScript("window.scrollBy(0,500)", "");
     }
+    public static void scrolldown() {
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+    	js.executeScript("window.scrollBy(0,1020)", "");
+    }
     public static void scrollup() {
     	JavascriptExecutor js = (JavascriptExecutor) driver;
     	js.executeScript("window.scrollBy(0,-700)", "");
     }
+    
+    
     public static void elementclick(By e) {
     	
     	WebElement l = currentEle(e);
@@ -217,6 +223,16 @@ public class CoreActions extends CoreTestIntegration {
     }
     public static boolean verifyTextNotNull(By element) {
     	String s=currentelement(element);
+    	if (s == null || s.isEmpty() || s.trim().isEmpty()) {
+    		return false;
+    	}
+    	else {
+    		return true;
+    	}
+    	
+    }
+    public static boolean verifyStringNotNull(String s) {
+    	
     	if (s == null || s.isEmpty() || s.trim().isEmpty()) {
     		return false;
     	}

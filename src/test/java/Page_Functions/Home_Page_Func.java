@@ -15,6 +15,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import Page_Functions.SearchListings_Page_Func;
 
 public class Home_Page_Func extends CoreActions {
@@ -30,7 +33,7 @@ public class Home_Page_Func extends CoreActions {
     
     public static void closePopUp() {
     	
-    	
+    	System.out.println("user logged in successfully");
     	sleep(3);
     	waitForDashboardUrl();
     	System.out.println("dashboard opened");	
@@ -51,6 +54,38 @@ public class Home_Page_Func extends CoreActions {
     	waitForVisibility(Home_Page.teams_option);
     	click(Home_Page.teams_option);
     		
+    }
+    
+    public static void powerUpURL() {
+    	
+    	String changed_url = "PowerUp";
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlContains(changed_url));
+        String currURL= driver.getCurrentUrl();
+		Assert.assertTrue(currURL.contains(changed_url));
+		waitForVisibility(Home_Page.powerUPHeading);
+    }
+    
+    public static void centreCountyURL() {
+    	
+    	String changed_url = "CentreCounty";
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        wait.until(ExpectedConditions.urlContains(changed_url));
+        String currURL= driver.getCurrentUrl();
+		Assert.assertTrue(currURL.contains(changed_url));
+		waitForVisibility(Home_Page.centreCountyHeading);
+		System.out.println("url verified");
+
+    }
+
+    public static void supportGettingStartedOption() {
+    	
+    	waitForVisibility(Home_Page.supportOption);
+    	click(Home_Page.supportOption);
+    	waitForVisibility(Home_Page.supportOptionGettingStarted);
+    	click(Home_Page.supportOptionGettingStarted);
+		System.out.println("support menu Getting Started Option clicked");
+
     }
     
     public static void selectManageTeamOption() {
