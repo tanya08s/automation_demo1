@@ -48,10 +48,5 @@ public class reportingPage extends CoreActions{
 	public static final By listingAgentMLSIDheader= By.xpath("//th[@class='MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-hk4p1w'][10]//span");
 	public static final By address1header= By.xpath("//th[@class='MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-hk4p1w'][11]//span");
 	public static final By createdheader= By.xpath("//th[@class='MuiTableCell-root MuiTableCell-head MuiTableCell-alignLeft MuiTableCell-sizeMedium css-hk4p1w'][12]//span");
-	public static final By StatusListValues(int value) {
-		String xpath= String.format("//ul[@role='listbox']//li[%d]", value); 
-		System.out.println(xpath);
-		return (By) driver.findElement(By.xpath(xpath));
-	}
 	
 }

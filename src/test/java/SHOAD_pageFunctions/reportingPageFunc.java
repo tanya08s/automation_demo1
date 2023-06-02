@@ -27,7 +27,7 @@ public class reportingPageFunc extends CoreActions{
         super(driver);
         this.driver7=driver;
     }
-    
+ 
     public static void verifyReportingType() {
     	
     	click(reportingPage.reportType);
@@ -145,14 +145,12 @@ public class reportingPageFunc extends CoreActions{
     	sleep(2);
     	click(reportingPage.status);
     	int count= getElementCount(reportingPage.statusListValues);
-    	List<WebElement> list =currentelements(reportingPage.statusListValues);
-    	for(int i=1;i<=count;i++) {
+    	List<WebElement> list;
+    	for(int i=0;i<count;i++) {
     		sleep(2);
     		System.out.println(i);
-//    		waitForVisibility(reportingPage.statusListValues);
-//    		System.out.println(list.get(i).getText());
-    		click(reportingPage.StatusListValues(i));
-//    		currentelements(reportingPage.statusListValues).
+    		list=currentelements(reportingPage.statusListValues);
+    		webelementclick(list.get(i));
     		click(reportingPage.searchBtn);
     		waitForVisibility(reportingPage.JSONheader);
     		checkTableHeaders();
