@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Test_Case.CentreCounty_Test_Case">
+      <class name="SHOAD_testCases.reportingTestCaseImplementation">
         <methods>
           <include name="openBrowser"/>
-          <include name="verifyDiscoverBrightSection"/>
+          <include name="checkSearchFunctionality"/>
+          <include name="close"/>
         </methods>
-      </class> <!-- Test_Case.CentreCounty_Test_Case -->
+      </class> <!-- SHOAD_testCases.reportingTestCaseImplementation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

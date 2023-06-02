@@ -1,0 +1,66 @@
+[	
+	{
+		"reportingDropdownOptions": {
+			"field1": "Registration Requests",
+			"field2": "Registrations",
+			"field3": "Appointment Requests",
+			"field4": "Appointments",
+			"field5": "Webhook Messages"
+		}
+		
+	},
+	{
+		"registrationRequestPlaceholders": {
+			"Placeholder1": "Registration Requests",
+			"Placeholder2": "Application ID#",
+			"Placeholder3": "Status",
+			"Placeholder4": "Registration Request ID#",
+			"Placeholder5": "Registration ID#",
+			"Placeholder6": "MLS ID#",
+			"Placeholder7": "Start Datetime",
+			"Placeholder8": "End Datetime"
+		}
+		
+	},
+	{
+	   "statusDropdownOptions": {
+			"option1": "Requested",
+			"option2": "Approved",
+			"option3": "Disapproved"
+		}
+		
+		
+	},
+	{
+	   "registrationRequestTestData": {
+			"appId": "920e8e74-dcf3-4204-904a-08db2a27a763",
+			"requestRegistrationId": "d2b68c7f-7274-4719-093a-08db2a3f69e4",
+			"registrationId": "2d6d84c0-7373-44f1-bd49-0a759728472c",
+			"mlsId": "e146dc83-7e3e-4c0f-894a-08db18c9a15f",
+			"startDate": "05/01/2023 12:00 AM",
+			"endDate": "05/17/2023 12:00 AM"
+		}
+		
+		
+	},
+	{
+	   "registrationRequestFieldHeaders": {
+			"header1": "JSON",
+			"header2": "Inspect",
+			"header3": "Registration Request ID",
+			"header4": "Status",
+			"header5": "Registration ID",
+			"header6": "Application ID",
+			"header7": "MLS ID",
+			"header8": "Listing ID",
+			"header9": "Listing Agent",
+			"header10": "Listing Agent MLS ID",
+			"header11": "Address1",
+			"header12": "Created"
+				
+		}
+		
+		
+	}
+	
+]

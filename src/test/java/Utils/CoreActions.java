@@ -127,6 +127,13 @@ public class CoreActions extends CoreTestIntegration {
     	ex.executeScript("arguments[0].click();", l);
     	}
     
+  public static void webelementclick(WebElement l) {
+    	
+    	
+    	JavascriptExecutor ex = (JavascriptExecutor)driver;
+    	ex.executeScript("arguments[0].click();", l);
+    	}
+    
     public static void checkOktaURL() {
     	
     	List<String> browserTabs = new ArrayList<String> (driver.getWindowHandles());
@@ -136,11 +143,26 @@ public class CoreActions extends CoreTestIntegration {
     	driver.switchTo().window(browserTabs.get(0));
     	
     }
+    
+    public static void waitForUrl(String url) {
+    	WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.urlContains(url));
+    }
+    
     public static String currentelement(By e) { 
     	
     	String text=driver.findElement(e).getText();
         return text;
     }
+    
+    public static void goToPreviousUrl() {
+    	driver.navigate().back();
+    }
+    
+    public static void refresh() {
+    	driver.navigate().refresh();
+    }
+    
   public static WebElement currentEle(By e) { 
     	
     	WebElement ele=driver.findElement(e);
@@ -154,6 +176,14 @@ public class CoreActions extends CoreTestIntegration {
       wait.until(ExpectedConditions.visibilityOf(element)); 
       wait.until(ExpectedConditions.invisibilityOf(element)); 
    }
+   
+   public static void loadingWait2() {
+		  
+		  WebElement element=currentEle(Manage_Brokerage_Page.loader2);
+	  	  WebDriverWait wait = new WebDriverWait(driver, 5000L);
+	      wait.until(ExpectedConditions.visibilityOf(element)); 
+	      wait.until(ExpectedConditions.invisibilityOf(element)); 
+	   }
   
    public static void waitTillDisapper(By e) {
 	  WebElement element=currentEle(e);
@@ -183,6 +213,14 @@ public class CoreActions extends CoreTestIntegration {
         List <WebElement> ls=driver.findElements(e);
         return ls;
     }
+    
+    public static int getElementCount(By e) { 
+    	
+        List <WebElement> ls=driver.findElements(e);
+        int count=ls.size();
+        return count;
+    }
+    
     public static void click(By element)
     {
         driver.findElement(element).click();
@@ -269,6 +307,18 @@ public class CoreActions extends CoreTestIntegration {
     	catch (NoSuchElementException e) {
             return false;
         }
+    	
+    }
+    
+    public static boolean checkIfClickable( By e) {
+    	
+    	WebElement element=driver.findElement(e);
+    	if (element.isDisplayed() && element.isEnabled()) {
+    	    return true;
+    	}
+    	else {
+    		return false;
+    	}
     	
     }
 

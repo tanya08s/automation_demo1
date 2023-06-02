@@ -30,6 +30,8 @@ public class Manage_Brokerage_Page {
     public static final By declineTeam=	By.xpath("//table[@id='manage_brokerage_dt']//tbody//tr[@class='MuiTableRow-root manage_brokerage_tr ']//td[2]//span[contains(text(),'Archer Pac Team1')]/../..//td[6]//div//button[2]");
     public static final By acceptKellyTeam= By.xpath("//table[@id='manage_brokerage_dt']//tbody//tr[@class='MuiTableRow-root manage_brokerage_tr ']//td[2]//span[contains(text(),'Kelly Arc Team1')]/../..//td[6]//div//button[1]");
     public static final By loader= By.xpath("//div[@role='progressbar']");
+    public static final By loader2= By.xpath("//span[@role='progressbar']");
+    
     public static final By editKellyTeam= By.xpath("//table[@id='manage_brokerage_dt']//tbody//tr[@class='MuiTableRow-root manage_brokerage_tr can_edit']//td[2]//span[contains(text(),'Kelly Arc Team1')]/../..//div");
     public static final By editTeamName= By.xpath("//input[@id='team_name']");
     public static final By TLName= By.xpath("//input[@name='teamLeadName']");
