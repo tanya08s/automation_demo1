@@ -58,9 +58,73 @@
 			"header11": "Address1",
 			"header12": "Created"
 				
+		}	
+	},
+	{
+	   "registrationRequestData": {
+			"RegistrationRequestID": "122e668b-4e2b-47dd-093b-08db2a3f69e4"			
+	     }
+	},
+	
+	{
+	   "noResultFoundError": {
+			"errorHeading": "No Results Found",
+			"errorDescription": "We can’t find any items matching your search. Double check your search for any typos or try a different search term."			
+	     }
+	},
+	{
+		"weekdays": {
+		    "w1": "S",
+			"w2": "M",
+			"w3": "T",
+			"w4": "W",
+			"w5": "T",
+			"w6": "F",
+			"w7": "S"		
+		}
+		
+	},
+	{
+		"calender": {
+		    "startDateTime": "02/15/2023 03:15 AM",
+			"endDateTime": "06/15/2023 03:45 AM"
+		}
+		
+	},
+	{
+		"registrationPlaceholders": {
+			"Placeholder1": "Registrations",
+			"Placeholder2": "Application ID#",
+			"Placeholder3": "Registration ID#",
+			"Placeholder4": "MLS ID#",
+			"Placeholder5": "Start Datetime",
+			"Placeholder6": "End Datetime"
+		}
+		
+	},
+	{
+	   "registrationTestData": {
+			"appId": "07d17d9a-c598-43fc-a7c8-08dad7d76d6f",
+			"registrationId": "c8bb44a7-7dd8-47df-b4b5-ab8e0176dcd1",
+			"mlsId": "6d221e6d-fcd4-4818-bfd7-08dad7d6f248"
 		}
 		
 		
+	},
+	{
+	   "registrationsFieldHeaders": {
+			"header1": "JSON",
+			"header2": "Inspect",
+			"header3": "Registration ID",
+			"header4": "Application ID",
+			"header5": "MLS ID",
+			"header6": "Listing ID",
+			"header7": "Listing Agent",
+			"header8": "Listing Agent MLS ID",
+			"header9": "Address1",
+			"header10": "Created"
+				
+		}	
 	}
 	
 ]

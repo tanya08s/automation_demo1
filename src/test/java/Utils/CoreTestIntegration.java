@@ -75,11 +75,11 @@ public class CoreTestIntegration {
         dashboardPageFuncObj= new dashboardPageFunc(driver);
         
     }
-    
-    @AfterClass(alwaysRun=true)
-    public void close()
-    {
-        driver.quit();
-    }
+//    
+//    @AfterClass(alwaysRun=true)
+//    public void close()
+//    {
+//        driver.quit();
+//    }
 
 }

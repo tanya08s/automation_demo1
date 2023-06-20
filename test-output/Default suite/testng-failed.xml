@@ -6,8 +6,7 @@
       <class name="SHOAD_testCases.reportingTestCaseImplementation">
         <methods>
           <include name="openBrowser"/>
-          <include name="checkSearchFunctionality"/>
-          <include name="close"/>
+          <include name="RegistrationsSearchInspect"/>
         </methods>
       </class> <!-- SHOAD_testCases.reportingTestCaseImplementation -->
     </classes>

@@ -17,7 +17,7 @@ public class dashboardPage {
 	public static final By applicationText= By.xpath("(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'])[5]");
 	public static final By subscriptionText= By.xpath("(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'])[6]");
 	public static final By dataText= By.xpath("(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'])[7]");
-	public static final By reportingText= By.xpath("(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'])[8]");
+	public static final By reportingText= By.xpath("(//div[contains(@class,'MuiListItemText-root')]//span)[8]");
 	public static final By inspectText= By.xpath("(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'])[9]");	
 	public static final By logoutIcon= By.xpath("(//*[local-name()='svg' and @data-testid='LogoutIcon' ]/*[local-name()='path'])[1]");
 	public static final By logoutText= By.xpath("(//span[@class='MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-yb0lig'])[10]");
@@ -39,7 +39,7 @@ public class dashboardPage {
     public static final By firstCardViewJSONBtn= By.xpath("(//div[@class='MuiCardActions-root MuiCardActions-spacing css-3zukih']//button)[2]");
     public static final By ViewJSONClose= By.xpath("(//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiCard-root css-x37anu']//button)[2]");
     public static final By ViewJSONCopy=  By.xpath("(//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiCard-root css-x37anu']//button)[1]");
-    public static final By ViewJSONDiv=   By.xpath("(//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiCard-root css-x37anu']");
+    public static final By ViewJSONDiv=   By.xpath("(//div[@class='MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiCard-root css-x37anu'])");
 
     
 }

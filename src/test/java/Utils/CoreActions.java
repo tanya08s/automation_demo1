@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.awt.Window;
 import java.util.ArrayList;
 import java.util.List;
 import Object_Repository.Manage_Brokerage_Page;
@@ -31,6 +32,13 @@ public class CoreActions extends CoreTestIntegration {
         waiter.until(ExpectedConditions.visibilityOfElementLocated(element));
         return isVisible;
     }
+    
+    protected static boolean waitForVisibility(WebElement element) {
+        boolean isVisible = true;
+        waiter.until(ExpectedConditions.visibilityOf(element));
+        return isVisible;
+    }
+    
     public static void waitForDashboardUrl() {
         String changed_url = "https://www.tst.brightmls.com/dashboard";
         WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -95,6 +103,11 @@ public class CoreActions extends CoreTestIntegration {
         WebDriverWait wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.urlContains("matrix.tst.brightmls"));
     }
+    public static void listWait(By e) {
+    	
+        WebDriverWait wait = new WebDriverWait(driver, 40);
+        wait.until(ExpectedConditions.numberOfElementsToBe(e, 21));
+    }
     public static void logOutUrl() {
     	String url = "https://www.tst.brightmls.com/logout";
     	driver.navigate().to(url);
@@ -104,6 +117,12 @@ public class CoreActions extends CoreTestIntegration {
     	String url = "https://teams.tst.brightmls.com/TeamSignUp";
     	driver.navigate().to(url);
 
+    }
+    public static void waitTillClickable(WebElement l) {
+    	
+    	 
+    	WebDriverWait wait = new WebDriverWait(driver, 10);
+    	wait.until(ExpectedConditions.elementToBeClickable(l));
     }
     
     public static void scroll() {
@@ -127,13 +146,19 @@ public class CoreActions extends CoreTestIntegration {
     	ex.executeScript("arguments[0].click();", l);
     	}
     
-  public static void webelementclick(WebElement l) {
+   public static void webelementclick(WebElement l) {
     	
     	
     	JavascriptExecutor ex = (JavascriptExecutor)driver;
     	ex.executeScript("arguments[0].click();", l);
     	}
     
+    public static void scrollTillLast() {
+    	
+    	JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+
+    }
     public static void checkOktaURL() {
     	
     	List<String> browserTabs = new ArrayList<String> (driver.getWindowHandles());
@@ -169,6 +194,19 @@ public class CoreActions extends CoreTestIntegration {
         return ele;
     }
   
+ public static void clickAnElement(By e) {
+	 
+      WebElement element =driver.findElement(e);
+	  Actions actions = new Actions(driver);
+	 actions.moveToElement(element).click().perform();
+  }
+ public static void clickAnElement2( WebElement element) {
+	 
+  
+	  Actions actions = new Actions(driver);
+	 actions.moveToElement(element).click().perform();
+ }
+  
    public static void loadingWait() {
 	  
 	  WebElement element=currentEle(Manage_Brokerage_Page.loader);
@@ -202,16 +240,50 @@ public class CoreActions extends CoreTestIntegration {
 		  }
 	  return s.toString();
    }
+   
+   public static  String generateRandomNumber(int l){
+		  
+		  String AlphaNumericStr = "0123456789";
+	      StringBuilder s = new StringBuilder(l);
+		  int i;
+		  for ( i=0; i<l; i++) {
+			  int ch = (int)(AlphaNumericStr.length() * Math.random());
+			  s.append(AlphaNumericStr.charAt(ch));
+			  }
+		  return s.toString();
+	   }
   
     public static String getAttribute(By e,String val) { 
     	
     	String ele=driver.findElement(e).getAttribute(val);
         return ele;
     }
+    
     public static List<WebElement> currentelements(By e) { 
     	
         List <WebElement> ls=driver.findElements(e);
         return ls;
+    }
+    
+    public static boolean checkIfButtonDisabled(WebElement element) {
+    	
+    	if(element.isEnabled()) {
+    		return false;
+    	}
+    	else {
+    		return true;
+    	}
+    }
+    
+   public static boolean checkIfButtonDisabled(By element) {
+	   
+	   WebElement e=driver.findElement(element);
+    	if(e.isEnabled()) {
+    		return false;
+    	}
+    	else {
+    		return true;
+    	}
     }
     
     public static int getElementCount(By e) { 
@@ -269,6 +341,18 @@ public class CoreActions extends CoreTestIntegration {
     	}
     	
     }
+    
+    public static boolean verifyTextNull(By element) {
+    	String s=currentelement(element);
+    	if (s == null || s.isEmpty() || s.trim().isEmpty()) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    	
+    }
+    
     public static boolean verifyStringNotNull(String s) {
     	
     	if (s == null || s.isEmpty() || s.trim().isEmpty()) {
@@ -320,6 +404,12 @@ public class CoreActions extends CoreTestIntegration {
     		return false;
     	}
     	
+    }
+    
+    public static void clickelement(By e) {
+    	WebElement element = driver.findElement(e);
+    	Actions action = new Actions(driver);
+    	action.moveToElement(element).click().perform();
     }
 
 }
